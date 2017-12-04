@@ -1,34 +1,63 @@
 @import url('reset.css');
 
 #outer-wrapper {
-  width:1280px;
-  height:800px;
-  margin:0 auto;
-  border: 1px solid black;
+  width:100vw;
+  height:100vh;
+/*   margin:0 auto; */
+/*   border: 1px solid black; */
   display:flex;
   flex-flow: row wrap;
-  padding:10px;
- align-self:center;
+/*   padding:10px; */
+/*   align-self:center; */
+  background-color:green;
   
 }
 
 #vs{
   width: 200px;
   height: 300px;
-  border: 1px solid black;
-  padding:10px;
-  align-self:center;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -17px;
+  z-index:100;
+/*   border: 1px solid black; */
+/*   padding:10px; */
+/*   align-self:center; */
   
+  animation:rotate;
+  animation-duration:1s;
+  animation-timing-function:ease-in;
+  animation-iteration-count:infinite;
+ 
   }
 
-.movie-poster{
-  width: 400px;
-  height: 685px;
-  border: 1px solid black;
-  margin: 20px;
-  padding:10px;
-  flex-grow:1;
+@keyframes rotate {
+  0%{transform: rotate(0deg);}
+  50%{transform: rotate(7deg);}
 }
+
+@keyframes from left {
+  from {width:0vw}
+  to {width:50vw}
+}
+.movie-poster-one-bg{
+  width: 50vw;
+  height: 100vh;
+/*   border: 1px solid black; */
+/*   margin: 20px; */
+/*   padding:10px; */
+/*   flex-grow:1; */
+  background-color:orange;
+  
+}.movie-poster-two-bg{
+  width: 50vw;
+  height: 100vh;
+/*   border: 1px solid black; */
+/*   margin: 20px; */
+/*   padding:10px; */
+/*   flex-grow:1; */
+  background-color:orange;
 
 img{
   margin:40px auto;
@@ -36,7 +65,7 @@ img{
   
 }
 
-#Generate{
+#generate{
   background-color:blue;
   width: 200px;
   height:50px;
