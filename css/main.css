@@ -3,34 +3,27 @@
 #outer-wrapper {
   width:100vw;
   height:100vh;
-/*   margin:0 auto; */
-/*   border: 1px solid black; */
-  display:flex;
-  flex-flow: row wrap;
-/*   padding:10px; */
-/*   align-self:center; */
   background-color:green;
-  
+
 }
 
-#vs{
+#vs {
   width: 200px;
   height: 300px;
   position:absolute;
   top: 50%;
   left: 50%;
-  margin: -70px 0 0 -17px;
+  margin: -70px 0 0 -170px;
   z-index:100;
-/*   border: 1px solid black; */
-/*   padding:10px; */
-/*   align-self:center; */
-  
-  animation:rotate;
+  animation-name:rotate;
   animation-duration:1s;
   animation-timing-function:ease-in;
   animation-iteration-count:infinite;
- 
-  }
+ }
+
+#vs:hover{
+  opacity:.5;
+}
 
 @keyframes rotate {
   0%{transform: rotate(0deg);}
@@ -42,30 +35,91 @@
   to {width:50vw}
 }
 .movie-poster-one-bg{
-  width: 50vw;
-  height: 100vh;
-/*   border: 1px solid black; */
-/*   margin: 20px; */
-/*   padding:10px; */
-/*   flex-grow:1; */
-  background-color:orange;
-  
-}.movie-poster-two-bg{
-  width: 50vw;
-  height: 100vh;
-/*   border: 1px solid black; */
-/*   margin: 20px; */
-/*   padding:10px; */
-/*   flex-grow:1; */
-  background-color:orange;
-
-img{
-  margin:40px auto;
-  display: block;
-  
+  height:100vh;
+  width:0vw;
+  background-color:yellow;
+  float:left;
+/*   animation-name: grow-left;
+  animation-duration: .5s;
+  animation-timing-function:ease-in; */
 }
 
-#generate{
+
+.movie-poster-one-bg:before{
+  content:'';
+  width:100%;
+  height:100%;
+  background-position:30% 30%;
+  display:block;
+  filter:opacity(.25) grayscale(100%) contrast(130%);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image:url('https://image.tmdb.org/t/p/w1400_and_h450_bestv2/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg');
+}
+  
+png {
+  margin:40px auto;
+  display: block;
+}
+
+.movie-poster-two-bg{
+  height:100vh;
+  width:0vw;
+  background-color:orange;
+  float:right;
+/*   animation-name: grow-right;
+  animation-duration: .5s;
+  animation-timing-function:ease-in; */
+}
+
+  .movie-poster-two-bg:before{
+  content:'';
+  width:100%;
+  height:100%;
+  background-position:30% 30%;
+  display:block;
+  filter:opacity(.25) grayscale(100%) contrast(130%);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image:url('http://www.comingsoon.net/assets/uploads/2017/08/thorINTP3.jpg');
+}
+  
+
+.grow-right{
+  animation-name: grow-right;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
+  animation-fill-mode: forwards;
+}
+
+.grow-left{
+  animation-name: grow-left;
+  animation-duration: .5s;
+  animation-timing-function:ease-in;
+  animation-fill-mode: forwards;
+}
+
+  /* The animation code */
+@keyframes grow-left {
+    from {width:0vw}
+    to {width:50vw}
+}
+
+@keyframes grow-right {
+    from {width:0vw}
+    to {width:50vw}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  50%{transform: rotate(7deg);}
+}
+
+
+
+
+
+#generate {
   background-color:blue;
   width: 200px;
   height:50px;
@@ -78,7 +132,11 @@ img{
   font-size:25px;
   font-weight:600;
   cursor: pointer;
-  margin: 0 auto ;
   align-self:center;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin: 300px 0 0 -100px;
+  z-index:100;
   
 }
