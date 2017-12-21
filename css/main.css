@@ -1,142 +1,75 @@
-@import url('reset.css');
+/* Import CSS file from external file */
+@import url(reset.css);
 
 #outer-wrapper {
-  width:100vw;
-  height:100vh;
-  background-color:green;
-
+    width:100vw;
+    height:100vh;
+    background-color:black;
 }
 
-#vs {
-  width: 200px;
-  height: 300px;
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  margin: -70px 0 0 -170px;
-  z-index:100;
-  animation-name:rotate;
-  animation-duration:1s;
-  animation-timing-function:ease-in;
-  animation-iteration-count:infinite;
- }
-
-#vs:hover{
-  opacity:.5;
+.movie-left{
+    /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: left;
+    background-color: yellow;
 }
 
-@keyframes rotate {
-  0%{transform: rotate(0deg);}
-  50%{transform: rotate(7deg);}
+.movie-right{
+     /* Set the initial width to zero so we have something that can grow */
+    width:0vw;
+    height: 100vh;
+    float: right;
+    background-color: orange;
 }
 
-@keyframes from left {
-  from {width:0vw}
-  to {width:50vw}
-}
-.movie-poster-one-bg{
-  height:100vh;
-  width:0vw;
-  background-color:yellow;
-  float:left;
-/*   animation-name: grow-left;
-  animation-duration: .5s;
-  animation-timing-function:ease-in; */
+.slide-in-left {
+    /* Create animation Classes that we can add onto our elements */
+    animation-name:slide-left;
+     /* Give the animations a duration */
+     animation-duration: 1s;
+     /* Use this to make sure the animation stops at the end */
+     animation-fill-mode: forwards;
 }
 
-
-.movie-poster-one-bg:before{
-  content:'';
-  width:100%;
-  height:100%;
-  background-position:30% 30%;
-  display:block;
-  filter:opacity(.25) grayscale(100%) contrast(130%);
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-image:url('https://image.tmdb.org/t/p/w1400_and_h450_bestv2/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg');
-}
-  
-png {
-  margin:40px auto;
-  display: block;
+.slide-in-right {
+     /* Create animation Classes that we can add onto our elements */
+     /* Give the animations a name */
+    animation-name:slide-right;
+     /* Give the animations a duration */
+    animation-duration: 1s;
+    /* Use this to make sure the animation stops at the end */
+    animation-fill-mode: forwards;
+    
 }
 
-.movie-poster-two-bg{
-  height:100vh;
-  width:0vw;
-  background-color:orange;
-  float:right;
-/*   animation-name: grow-right;
-  animation-duration: .5s;
-  animation-timing-function:ease-in; */
+.mp {
+  width:400px;
+  position:relative;
 }
 
-  .movie-poster-two-bg:before{
-  content:'';
-  width:100%;
-  height:100%;
-  background-position:30% 30%;
-  display:block;
-  filter:opacity(.25) grayscale(100%) contrast(130%);
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-image:url('http://www.comingsoon.net/assets/uploads/2017/08/thorINTP3.jpg');
-}
-  
-
-.grow-right{
-  animation-name: grow-right;
-  animation-duration: .5s;
-  animation-timing-function:ease-in;
-  animation-fill-mode: forwards;
+.generate-btn {
+    width:300px;
+    height:100px;
+    position:absoloute;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+    line-height: 100px;
+    color:white;
+    text-align: center;
+    margin: -70px 0 0 -170px;
 }
 
-.grow-left{
-  animation-name: grow-left;
-  animation-duration: .5s;
-  animation-timing-function:ease-in;
-  animation-fill-mode: forwards;
-}
-
-  /* The animation code */
-@keyframes grow-left {
-    from {width:0vw}
-    to {width:50vw}
-}
-
-@keyframes grow-right {
-    from {width:0vw}
-    to {width:50vw}
-}
-
-@keyframes rotate {
-  0% {transform: rotate(0deg);}
-  50%{transform: rotate(7deg);}
+@keyframes slide-left {
+    0% {width:0vw;}
+    100%{width:50vw;}
 }
 
 
-
-
-
-#generate {
-  background-color:blue;
-  width: 200px;
-  height:50px;
-  border-radius:20px;
-  color:white;
-  text-transform:uppercase;
-  text-align:center;
-  line-height:50px;
-  font-family: helvetica;
-  font-size:25px;
-  font-weight:600;
-  cursor: pointer;
-  align-self:center;
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  margin: 300px 0 0 -100px;
-  z-index:100;
-  
+@keyframes slide-right {
+    0% {width:0vw;}
+    100%{width:50vw;}
 }
